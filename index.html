@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {},
+            fontFamily: {
+              kanit: ["Kanit", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <title>Password Generator</title>
+  </head>
+  <body>
+    <section class="bg-gray-900 flex min-h-screen justify-center items-center">
+      <div class="container p-5 w-3/4 h-auto text-white font-kanit">
+        <div
+          class="max-w-sm mx-auto uppercase text-3xl font-semibold tracking-wider mb-6 text-center"
+        >
+          Password Generator
+        </div>
+        <!-- INI_BAGIAN_FORM -->
+        <div class="p-4 mb-2 max-w-lg mx-auto">
+          <label for="passwordLength" class="font-normal mb-2 block text-base"
+            >Panjang Password</label
+          >
+          <input
+            type="number"
+            id="passwordLength"
+            class="p-2 w-full rounded-sm text-slate-500 shadow-md mb-6"
+          />
+          <label for="password" class="font-normal mb-2 block text-base"
+            >Password</label
+          >
+          <input
+            type="password"
+            disabled
+            id="password"
+            class="p-2 w-full shadow-md rounded-sm text-slate-500"
+          />
+        </div>
+
+        <div
+          class="p-4 max-w-lg mx-auto flex flex-wrap justify-between mb-8 gap-4"
+        >
+          <button
+            class="py-3 w-full outline outline-1 outline-teal-500 rounded-lg shadow-md uppercase font-semibold text-base tracking-wide hover:bg-teal-500 focus:ring-4 focus:ring-teal-600 duration-200 ease-in-out"
+            onclick="getPassword()"
+          >
+            Generate Password
+          </button>
+          <a
+            class="py-3 w-full font-semibold bg-teal-500 rounded-lg text-center shadow-md uppercase text-base tracking-wide cursor-pointer hover:bg-teal-600 duration-200 ease-in-out"
+            id="saveButton"
+            onclick="savePassword()"
+          >
+            Save Password
+          </a>
+        </div>
+        <!-- INI_BAGIAN_FORM -->
+
+        <div class="max-w-xs mx-auto py-2 text-center">
+          <h1 class="font-light text-gray-500 text-base italic tracking-wide">
+            this website is made by Rangga.
+          </h1>
+        </div>
+      </div>
+    </section>
+
+    <script src="main.js"></script>
+  </body>
+</html>
